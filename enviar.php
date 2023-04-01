@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['enviar'])) {
     if(!empty($_POST['name']) && !empty($_POST['asunto']) && !empty($_POST['msg']) && !empty($_POST['email'])) {
         $name = $_POST['name'];
@@ -8,7 +9,7 @@ if(isset($_POST['enviar'])) {
         $header = "From: " . $_POST['email'] . "\r\n";
         $header .= "Reply-To: " . $_POST['email'] . "\r\n";
         $header .= "X-Mailer: PHP/" . phpversion();
-        $mail = @mail($email,$asunto,$msg,$header);
+        $mail = @mail("jose.onepiece@hotmail.com",$asunto,$msg,$header);
         if($mail){
             echo "<h4> ¡Mail enviado exitosamente!</h4>";
         } else {
